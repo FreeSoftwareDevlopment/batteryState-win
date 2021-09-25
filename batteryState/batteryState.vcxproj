@@ -143,7 +143,14 @@
     <ClCompile Include="runningf.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="running.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="batteryState.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
