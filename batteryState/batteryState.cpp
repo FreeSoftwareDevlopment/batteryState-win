@@ -22,6 +22,8 @@ int main()
 
 	pset;
 	HWND ConsoleWindow{ GetConsoleWindow() };
+	SetConsoleTitle(L"Sharkbyte Battery");
+	SetConsoleMode(ConsoleWindow, ENABLE_PROCESSED_OUTPUT | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
 	int batteryLevel{ 0 };
 	SYSTEM_POWER_STATUS status;
 	do {
@@ -29,7 +31,7 @@ int main()
 		GetSystemPowerStatus(&status);
 		batteryLevel = status.BatteryLifePercent;
 		std::cout << erase << "Battery Level:\t" << batteryLevel << "%\n";
-		std::cout << erase << "AC LINE:\t" << (((char)(status.ACLineStatus))==((char)1)?"PLUGGED IN":"NOT PLUGGED IN") << "\n";
+		std::cout << erase << "AC LINE:\t" << (((char)(status.ACLineStatus)) == ((char)1) ? "PLUGGED IN" : "NOT PLUGGED IN") << "\n";
 		std::cout << erase << "Full Lifetime:\t" << status.BatteryFullLifeTime << "\n";
 		std::cout << erase << "Lifetime:\t" << status.BatteryLifeTime << std::endl;
 		pset;
